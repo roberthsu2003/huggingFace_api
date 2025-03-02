@@ -6,9 +6,9 @@
 ## 自然語言(Natural Language Processing)
 ## 3. HuggingFace上可以使用的資源
 
-## [Hugging Face資源](./source_hugging_face)
+[**Hugging Face資源**](./source_hugging_face)
 
-## [專門為繁體中文優化過的開源模型](./source_for_tw)
+[**專門為繁體中文優化過的開源模型**](./source_for_tw)
 
 
 
