@@ -4,6 +4,9 @@
 ## AutoModel
 ## AutoTokenize
 ## 自然語言(Natural Language Processing)
+[情感分析](./自然語言/text-classification)
+
+[命名實體識別(NER)](./自然語言/ner)
 
 ## 3. HuggingFace上可以使用的資源
 
