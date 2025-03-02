@@ -2,3 +2,4 @@ transformers
 datasets
 ipywidgets
 python-dotenv
+torch
