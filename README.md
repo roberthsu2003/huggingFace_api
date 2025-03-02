@@ -3,10 +3,14 @@
 ## pipeline
 ## AutoModel
 ## AutoTokenize
-## 多模態模型(multimodel)
-## 電腦視覺(computer vision)
 ## 自然語言(Natural Language Processing)
-## 語音(Audio)
+## 3. HuggingFace上可以使用的資源
+
+## [Hugging Face資源](./source_hugging_face)
+
+## [專門為繁體中文優化過的開源模型](./source_for_tw)
+
+
 
 
 - 
