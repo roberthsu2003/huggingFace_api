@@ -8,6 +8,8 @@
 
 [命名實體識別(NER)](./自然語言/ner)
 
+[Question_answering](./自然語言/qa)
+
 ## 3. HuggingFace上可以使用的資源
 
 [**Hugging Face資源**](./source_hugging_face)
