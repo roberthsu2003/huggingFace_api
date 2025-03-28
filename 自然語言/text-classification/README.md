@@ -3,6 +3,9 @@
 - multilingqual-sentiments
 - 支援中文
 
+> [!TIP]
+> [實作檔](./demo1.ipynb)
+
 ```python
 from transformers import pipeline
 
@@ -42,4 +45,28 @@ print('分數:',result[0]['score'])
 #==output==
 評比: 負評
 分數: 0.9129632115364075
+```
+
+
+## 模型: roberthsu2003/for_classification
+- 只支援中文
+
+> [!TIP]
+> [實作檔](./demo2.ipynb)
+
+```python
+from transformers import pipeline
+
+id2_label = {'LABEL_0':"負評",'LABEL_1':"正評"}
+pipe = pipeline('text-classification', model="roberthsu2003/for_classification")
+
+sen="服務人員都很親切"
+print(sen,id2_label[pipe(sen)[0]['label']])
+
+sen1="服務人員都不親切"
+print(sen1,id2_label[pipe(sen1)[0]['label']])
+
+#===output====
+服務人員都很親切 正評
+服務人員都不親切 負評
 ```
