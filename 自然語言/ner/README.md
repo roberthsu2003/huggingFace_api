@@ -1,9 +1,9 @@
 # 命名實體識別(named entity recognition)
-- 模型:(中央研究院)
-- ckiplab/bert-base-chinese-ner
+- 模型:(中央研究院)  
+ckiplab/bert-base-chinese-ner
 
-- 模型:roberthsu2003
-- roberthsu2003/models_for_ner
+- 模型:roberthsu2003  
+roberthsu2003/models_for_ner
 
 ## 使用ckiplab/bert-base-chinese-ner
 
