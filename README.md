@@ -7,6 +7,8 @@
 
 [Question_answering](./自然語言/qa)
 
+[多項選擇](./自然語言/multiple_choice)
+
 ## 3. HuggingFace上可以使用的資源
 
 [**Hugging Face資源**](./source_hugging_face)
