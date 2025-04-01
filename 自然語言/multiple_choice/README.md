@@ -1,8 +1,10 @@
 ## 多項選擇(Multiple Choice)
 > [!NOTE]
-> 模型:roberthsu2003/for_multiple_choice
-> [資料集來源](https://huggingface.co/datasets/roberthsu2003/for_Multiple_Choice)
-> [實作ipynb](./demo1.ipynb)
+> 模型:roberthsu2003/for_multiple_choice  
+> [資料集來源](https://huggingface.co/datasets/roberthsu2003/for_Multiple_Choice)  
+> [官方說明書](https://huggingface.co/docs/transformers/tasks/multiple_choice#inference)  
+- [簡體版說明書](https://blog.csdn.net/LLMUZI123456789/article/details/136478140?utm_source=chatgpt.com)  
+> [實作ipynb](./demo1.ipynb)  
 
 ```python
 from transformers import AutoTokenizer, AutoModelForMultipleChoice
