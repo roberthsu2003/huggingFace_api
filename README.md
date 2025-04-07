@@ -10,6 +10,8 @@
 
 [多項選擇](./自然語言/multiple_choice)
 
+[文本相似](./自然語言/multiple_choice)
+
 ## 3. HuggingFace上可以使用的資源
 
 [**Hugging Face資源**](./source_hugging_face)
