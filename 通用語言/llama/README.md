@@ -7,7 +7,7 @@
 **使用meta-llama/Llama-3.2-3B-Instruct示範**
 **使用colab,因為記憶體會超過12GB**
 
-### 實作
+### [實作](./demo1.ipynb)
 
 #### 使用流程
 1. 申請huggingface帳號
