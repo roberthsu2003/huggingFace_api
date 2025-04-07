@@ -5,6 +5,9 @@
 ### HuggingFace API
 
 **使用meta-llama/Llama-3.2-3B-Instruct示範**
+**使用colab,因為記憶體會超過12GB**
+
+### 實作
 
 #### 使用流程
 1. 申請huggingface帳號
@@ -22,13 +25,21 @@
 
 	![](./images/pic2.png)
 
-5. 安裝python-dotenv,保護token
+5. 使用Colab的secret,保護token
 
 6. 程式碼:
 
+
 ```python
-%pip install python-dotenv
+from huggingface_hub import login
+
+# 載入環境變數
+load_dotenv()
+
+# 使用環境變數中的token進行登入
+login(token=os.getenv('huggingface_token'))
 ```
+
 
 ```python
 from huggingface_hub import login
@@ -42,17 +53,5 @@ load_dotenv()
 login(token=os.getenv('HF_TOKEN'))
 ```
 
+7.本機端的記憶體不足夠(要12Gb以上),無法執行,colab上必需執行使用T4的GPU,才有足夠的記憶體
 
-```python
-from huggingface_hub import login
-from dotenv import load_dotenv
-import os
-
-# 載入環境變數
-load_dotenv()
-
-# 使用環境變數中的token進行登入
-login(token=os.getenv('HF_TOKEN'))
-```
-
-7.本機端的記憶體不足夠,無法執行,colab上執行
