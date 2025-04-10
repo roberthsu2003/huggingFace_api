@@ -2,7 +2,7 @@
 ## [Transformer快速入門](https://transformers.run)
 ## [gradio介面](https://github.com/roberthsu2003/gradio)
 ## Open source
-### 1. 通用語言:
+### 1. 通用(多模態)語言模型:
 1.1 [llama使用huggingface api](./通用語言/llama)
 - 缺點:要12GB以上記憶體
 - 優點:速度較快
@@ -10,6 +10,12 @@
 1.2 [llama使用huggingface api](./通用語言/llama/demo2.ipynb)
 - 缺點:回答比較慢
 - 優點: CPU可以執行,大約9GB以的記憶體
+
+1.3 [圖轉文字描述-使用meta-llama/Llama-3.2-11B-Vision-Instruct](./通用語言/llama/demo3.ipynb)
+
+- 模型大約要22GB,下載時間較久(本機不適合,適合使用colab的GPU使用)
+	- 缺點:使用CPU回答速度慢(6核心CPU,大約28分鐘)
+	- 不適合使用CPU執行
 
  
 ### 2. 自然語言(Natural Language Processing)
