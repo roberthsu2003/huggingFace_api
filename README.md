@@ -3,7 +3,14 @@
 ## [gradio介面](https://github.com/roberthsu2003/gradio)
 ## Open source
 ### 1. 通用語言:
-[llama使用huggingface api](./通用語言/llama)
+1.1 [llama使用huggingface api](./通用語言/llama)
+- 缺點:要12GB以上記憶體
+- 優點:速度較快
+
+1.2 [llama使用huggingface api](./通用語言/llama/demo2.ipynb)
+- 缺點:回答比較慢
+- 優點: CPU可以執行,大約9GB以的記憶體
+
  
 ### 2. 自然語言(Natural Language Processing)
 [情感分析](./自然語言/text-classification)
@@ -23,5 +30,5 @@
 [**專門為繁體中文優化過的開源模型**](./source_for_tw)
 
 
-## Close source:
+
 

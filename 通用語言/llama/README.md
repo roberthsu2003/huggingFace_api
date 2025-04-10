@@ -1,4 +1,4 @@
-## Meta Llama
+## 使用 Meta Llama Llama-3.2-3B-Instruct
 
 - [HuggingFace Meta Llama](https://huggingface.co/meta-llama)
 
@@ -6,6 +6,7 @@
 
 **使用meta-llama/Llama-3.2-3B-Instruct示範**
 **使用colab,因為記憶體會超過12GB**
+**使用GPU速度較快**
 
 ### 模型使用實作
 
@@ -32,7 +33,7 @@
 
 6. 本機端的記憶體不足夠(要12Gb以上),無法執行,colab上必需執行使用T4的GPU,才有足夠的記憶體
 
-7. 程式碼:
+
 
 
 
