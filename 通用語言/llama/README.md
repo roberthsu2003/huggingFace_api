@@ -8,7 +8,8 @@
 **使用colab,因為記憶體會超過12GB**
 
 ### 模型使用實作
-> [!IMPORTENT]
+
+> [!IMPORTANT]
 > [實作ipynb](./demo1.ipynb)
 
 #### 使用流程
