@@ -1,4 +1,5 @@
 ## 使用ollama和openWebUI
+
 1. 安裝Docker
 2. 本機安裝Ollama
 3. docker安裝Ollama
@@ -123,6 +124,9 @@ docker run -d -v ollama:/root/.ollama -p 11434:11434 --name ollama ollama/ollama
 
 
 ### 4. docker安裝OpenWebUI
+
+- 可以使用透過網路連線的免費模型(Chatbot Arena有17b的參數量)
+- 設定->管理員設定->連線->開啟直接連線(會自動連線Chatbot Arena)
 
 - 由於使用了restart always,docker一被啟動就會自動開啟container(比較秏資源)
 
