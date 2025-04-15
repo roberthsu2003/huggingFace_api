@@ -154,7 +154,7 @@ docker run -d --network=host -v open-webui:/app/backend/data -e OLLAMA_BASE_URL=
 > [!IMPORTANT]
 > 1. ollama的服數要開啟
 > 2. ollama run 模型名稱
-> 3. 本地端或docker啟動方式不一樣
+> 3. 本地端或docker api網址不一樣
 
 - [**實作py**](./interface.py)
 
