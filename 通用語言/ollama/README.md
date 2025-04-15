@@ -4,6 +4,7 @@
 2. 本機安裝Ollama
 3. docker安裝Ollama
 4. docker安裝OpenWebUI
+5. 連接gradio的介面呼叫ollama的api
 
 ### 1. 安裝Docker
 - https://docs.docker.com/get-started/get-docker/
