@@ -147,6 +147,8 @@ docker run -d --network=host -v open-webui:/app/backend/data -e OLLAMA_BASE_URL=
 
 ### 5. 連接gradio的介面呼叫ollama的api
 
+![](./images/pic1.png)
+
 - [ollama api官方說明書](https://github.com/ollama/ollama/blob/main/docs/api.md)
 
 > [!IMPORTANT]
