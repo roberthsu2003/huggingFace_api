@@ -1,7 +1,7 @@
 # huggingFace的應用
 ## [Transformer快速入門](https://transformers.run)
 ## [gradio介面](https://github.com/roberthsu2003/gradio)
-## Open source
+## 開放模型
 ### 1. [ollama 和 openWebUI](./通用語言/ollama)
 
 ### 2. 通用(多模態)語言模型:
