@@ -4,3 +4,4 @@ ipywidgets
 python-dotenv
 torch
 scikit-learn
+faiss-cpu
