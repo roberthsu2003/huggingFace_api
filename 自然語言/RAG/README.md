@@ -1,4 +1,7 @@
 ## 檢索增強生成(RAG)
+
+![](./images/pic1.png)
+
 - 使用dataset(roberthsu2003/data_for_RAG) 
 - 使用模型(使用Microsoft開源的intfloat/multilingual-e5-large)    
 > [!NOTE]
@@ -7,3 +10,6 @@
 - [測試檢索能力](./測試檢索能力.ipynb)
 - [學習對多筆文本搜尋最佳相似度](./學習多筆文本搜尋最佳相似度.ipynb)
 - [實作多筆文本中搜尋最佳文本](./實作多筆文本中搜尋最佳文本.ipynb)
+- [使用Faiss進行語義搜索-學習](./學習Faiss儲存向量資料.ipynb)
+	- Faiss 是 Facebook AI Search 釋出的開源程式庫，不算是資料庫，概念是針對向量建立索引並進行高效率搜索。
+
