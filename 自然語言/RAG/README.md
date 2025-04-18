@@ -13,6 +13,7 @@
 - [使用Faiss進行語義搜索-學習](./學習Faiss儲存向量資料.ipynb)
 	- Faiss 是 Facebook AI Search 釋出的開源程式庫，不算是資料庫，概念是針對向量建立索引並進行高效率搜索。  
 - [Faiss和gradio介面整合(py檔)](./Faiss和gradio介面整合.py)
+- [整合至huggingface space](https://huggingface.co/spaces/roberthsu2003/Tasla_modle3_manual)
 ![](./images/pic2.png)
 
 
