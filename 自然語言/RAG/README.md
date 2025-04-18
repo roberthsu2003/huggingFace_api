@@ -11,5 +11,8 @@
 - [學習對多筆文本搜尋最佳相似度](./學習多筆文本搜尋最佳相似度.ipynb)
 - [實作多筆文本中搜尋最佳文本](./實作多筆文本中搜尋最佳文本.ipynb)
 - [使用Faiss進行語義搜索-學習](./學習Faiss儲存向量資料.ipynb)
-	- Faiss 是 Facebook AI Search 釋出的開源程式庫，不算是資料庫，概念是針對向量建立索引並進行高效率搜索。
+	- Faiss 是 Facebook AI Search 釋出的開源程式庫，不算是資料庫，概念是針對向量建立索引並進行高效率搜索。  
+- [Faiss和gradio介面整合(py檔)](./Faiss和gradio介面整合.py)
+![](./images/pic2.png)
+
 
