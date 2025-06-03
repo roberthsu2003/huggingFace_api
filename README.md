@@ -4,6 +4,8 @@
 ## 開放模型
 ### 1. [ollama 和 openWebUI](./通用語言/ollama)
 
+### 2. [openWebUI應用](./通用語言/openWebUI)
+
 ### 2. 通用(多模態)語言模型:
 2.1 [llama使用huggingface api](./通用語言/llama)
 - 缺點:要12GB以上記憶體

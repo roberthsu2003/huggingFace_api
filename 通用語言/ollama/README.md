@@ -65,6 +65,16 @@ Windows
   
 ```
 
+**檢查是否已經安裝Ollama**
+
+```bash
+ollama --version
+```
+
+**查詢可以下載的模型**
+
+[查詢Ollama支援的Model](https://ollama.com/search)
+
 **下載模型指令**
 
 ```bash
