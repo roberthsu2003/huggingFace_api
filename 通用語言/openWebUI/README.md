@@ -49,10 +49,10 @@ docker run -d --network=host \
 	- Docker 映像檔的位置（GitHub Container Registry）。
 	- :main 表示使用主分支的最新版本。
 
-#### 3.2 雲端安裝
-3.2.1 選擇雲端平台（GCP、AWS、Azure、Vultr…）
-3.2.2 建立一台 Linux VM（Ubuntu 建議版本 ≥ 20.04）
-3.2.3 安裝 Docker：
+#### 3.2雲端安裝
+3.2.1 選擇雲端平台（GCP、AWS、Azure、Vultr…）  
+3.2.2 建立一台 Linux VM（Ubuntu 建議版本 ≥ 20.04）  
+3.2.3 安裝 Docker：  
 
 ```bash
 sudo apt update
@@ -65,11 +65,10 @@ sudo apt install docker.io
 
 
 
-#### 4. 初始設定
-
-4.1 帳號註冊與登入
-4.2 模型提供者設定
-4.3 測試模型
+#### 4.初始設定
+4.1 帳號註冊與登入  
+4.2 模型提供者設定  
+4.3 測試模型  
 
 ---
 
