@@ -1,15 +1,16 @@
 ## 使用ollama和openWebUI
 
 1. [安裝Docker](#安裝Docker)
-2. 本機安裝Ollama
-3. docker安裝Ollama
-4. docker安裝OpenWebUI
-5. 連接gradio的介面呼叫ollama的api
+2. [本機安裝Ollama](#本機安裝Ollama)
+3. [docker安裝Ollama](#docker安裝Ollama)
+4. [docker安裝OpenWebUI](#docker安裝OpenWebUI)
+5. [連接gradio的介面呼叫ollama的api](#連接gradio的介面呼叫ollama的api)
 
 <a name="安裝Docker"></a>
 ### 1. 安裝Docker
 - https://docs.docker.com/get-started/get-docker/
-
+---
+<a name="本機安裝Ollama"></a>
 ### 2. 本機安裝Ollama
 - 優點:會直接使用Mac的GPU,無GPU自動使用CPU
 - [ollama官網](https://ollama.com)
@@ -112,6 +113,10 @@ ollama stop llama3.2
 ollama rm llama3.2
 ```
 
+---
+
+
+<a name="docker安裝Ollama"></a>
 ### 3. docker安裝Ollama
 - 缺點:都是使用CPU
 - 如果要支援NVIDIA,請安裝NVIDIA Container Toolkit⁠.
@@ -124,7 +129,9 @@ docker run -d -v ollama:/root/.ollama -p 11434:11434 --name ollama ollama/ollama
 > [!IMPORTANT]
 > 安裝完後,可以利用docker desktop內container Exec來執行ollama的指令
 
+---
 
+<a name="docker安裝OpenWebUI"></a>
 ### 4. docker安裝OpenWebUI
 
 - 可以使用透過網路連線的免費模型(Chatbot Arena有17b的參數量)
@@ -145,7 +152,9 @@ docker run -d --network=host -v open-webui:/app/backend/data -e OLLAMA_BASE_URL=
 
 **使用瀏覽器啟動http://localhost:8080**
 
+---
 
+<a name="連接gradio的介面呼叫ollama的api"></a>
 ### 5. 連接gradio的介面呼叫ollama的api
 
 ![](./images/pic1.png)
