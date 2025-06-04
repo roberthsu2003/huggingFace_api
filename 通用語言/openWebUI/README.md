@@ -67,6 +67,7 @@ sudo apt install docker.io
 
 #### 4.初始設定
 4.1 帳號註冊與登入(必需記住帳號和密碼)   
+---
 4.2 模型提供者設定  
 - ollama的連線
 - 符合openAI API格式的連線  
@@ -74,6 +75,8 @@ sudo apt install docker.io
 	- `https://openrouter.ai/api/v1`
 
 ![](./images/pic1.png)
+
+---
 
 4.3 測試模型(可多模型測試)
 
