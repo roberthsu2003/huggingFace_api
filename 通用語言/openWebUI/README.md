@@ -128,9 +128,19 @@ sudo apt install docker.io
 
 7. 聲音(Audio)
 
-- 以下是預設的畫面
+- 以下是預設的畫面(可以使用預設的語音)
+
 
 ![](./images/pic5.png)
+
+- 使用TTS語音模型:Kokoro TTS 全面解析：輕量級開源語音新星，現已支援中文！
+
+> 深入了解 Kokoro TTS，這款僅有 8200 萬參數卻表現驚人的文字轉語音模型。本文將帶您一探其核心優勢、技術細節、應用方式，特別是最新加入的中文模型 Kokoro-82M-v1.1-zh，以及如何開始使用。[相關介紹](https://www.communeify.com/tw/blog/kokoro-tts-lightweight-open-source-text-to-speech-model-complete-guide)
+
+> [Kokoro TTS的安裝和整合至Open WebUI](./kokoro.md)
+
+
+---
 
 8. openWebUI -> Comminuty(必需有openWebUI網站的帳戶)
 
