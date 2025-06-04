@@ -88,21 +88,48 @@ sudo apt install docker.io
 
 **功能定位**:筆記功能讓你在使用 Open WebUI 與模型互動時，將某段回答（或輸入）「標記起來」並儲存在一個可管理的區塊裡，就像寫下筆記一樣。這對於教學、研究或專案紀錄特別有幫助。
 
+---
+
 2. **「臨時對話」（Temporary Chat）** 
 
 是一項設計用來加強隱私保護與資料合規性的功能。啟用此模式後，使用者的對話內容不會被永久儲存，適合在處理敏感資訊或希望避免留下對話紀錄的情境中使用。
 
+---
 
 3. 工作區 -> 模型
 	- 建立自訂名稱的模型,如(寫程式的模型, 翻譯的模型, 寫文章的模型)
+---
 
 4. 工作區 -> 知識區
 	- 提供相關的文件,讓模型可以依據文件做搜尋的動作
+---
 
 5. 工作區 -> 提示詞
 	- 建立預先建立好的prompt
 
-6. openWebUI -> Comminuty(必需有openWebUI帳戶)
+---
+
+6. 網頁搜尋(web search)
+	- 網頁搜尋選項必需啟動
+	- 申請google的Programmable Search Engine
+	- 必需要有:Google PSE 引擎 ID
+	- 必需要有: Google PSE API 金鑰(金鑰請求必需要按Programmatic access)
+	
+	![金鑰請求必需要按Programmatic access](./images/pic4.png)
+
+	- 每天10,000請求免費
+
+![](./images/pic3.png)
+
+---
+
+7. 聲音(Audio)
+
+- 以下是預設的畫面
+
+![](./images/pic5.png)
+
+8. openWebUI -> Comminuty(必需有openWebUI網站的帳戶)
 
 ---
 
