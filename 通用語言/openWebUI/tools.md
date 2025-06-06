@@ -55,6 +55,8 @@ pip install -r requirements.txt
 uvicorn main:app --host 0.0.0.0 --reload
 ```
 
+> 如果要直接部置至docker內,可以至time的資料夾內,開啟compose.yaml檔,並直接按下`run service`
+
 ### Step 2:從Open WebUI連線至Connect Tool Server
 
 1. 在瀏覽器中開啟 WebUI。
