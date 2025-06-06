@@ -139,7 +139,7 @@ sudo apt install docker.io
 
 ## 模組 5：進階應用開發
 
-1. 整合 API（串接外部資源）
+1. 整合`工具`(串接外部資源）[工具說明](./tools.md)
 2. 使用 Plugins 擴充功能
 3. 客製化回應與 Prompt 工程（Prompt Engineering）
 4. 多模態應用（如結合圖片、語音等）
