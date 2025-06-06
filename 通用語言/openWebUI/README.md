@@ -137,12 +137,10 @@ sudo apt install docker.io
 
 ---
 
-## 模組 5：進階應用開發
+## 模組 5：自訂工具
 
 1. 整合`工具`(串接外部資源）[工具說明](./tools.md)
-2. 使用 Plugins 擴充功能
-3. 客製化回應與 Prompt 工程（Prompt Engineering）
-4. 多模態應用（如結合圖片、語音等）
+2. [如何建立自己的 OpenWebUI 工具伺服器 (教學1)](./如何建立自己的%20OpenWebUI工具伺服器_教學1.md)
 
 ---
 
