@@ -4,7 +4,8 @@
 2. [本機安裝Ollama](#本機安裝Ollama)
 3. [docker安裝Ollama](#docker安裝Ollama)
 4. [docker安裝OpenWebUI](#docker安裝OpenWebUI)
-5. [連接gradio的介面呼叫ollama的api](#連接gradio的介面呼叫ollama的api)
+5. [requests連結ollama](#requests連結ollama)
+8. [連接gradio的介面呼叫ollama的api](#連接gradio的介面呼叫ollama的api)
 
 <a name="安裝Docker"></a>
 ### 1. 安裝Docker
@@ -163,9 +164,49 @@ docker run -d --network=host -v open-webui:/app/backend/data -e OLLAMA_BASE_URL=
 **使用瀏覽器啟動http://localhost:8080**
 
 ---
+<a name=“requests連結ollama”></a>
+
+### 5. requests連結ollama
+
+```python
+import requests
+
+def chat_with_ollama(prompt: str):
+    url = "http://localhost:11434/api/generate"
+    payload = {
+        "model": "gemma3:1b",
+        "prompt": prompt,
+        "stream": False,
+        "options": { #參考說明1
+            "temperature": 0.7,
+            "top_p": 0.9,
+            "top_k": 50,
+        },
+        "max_tokens": 100,
+        "format": "json",
+    }
+
+    response = requests.post(url, json=payload)
+    result = response.json()
+    print("💬 AI 回應：")
+    # Print the whole result for debugging
+    print(result)
+    # Try to print the 'response' key if it exists, otherwise print possible keys
+    if "response" in result:
+        print(result["response"])
+    elif "message" in result:
+        print(result["message"])
+    elif "content" in result:
+        print(result["content"])
+    else:
+        print("No expected key found in response. Available keys:", result.keys())
+
+#範例輸入
+chat_with_ollama("請用簡單的方式解釋什麼是Python的函式？")
+```
 
 <a name="連接gradio的介面呼叫ollama的api"></a>
-### 5. 連接gradio的介面呼叫ollama的api
+### 8. 連接gradio的介面呼叫ollama的api
 
 ![](./images/pic1.png)
 
