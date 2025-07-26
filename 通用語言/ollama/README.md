@@ -5,6 +5,8 @@
 3. [docker安裝Ollama](#docker安裝Ollama)
 4. [docker安裝OpenWebUI](#docker安裝OpenWebUI)
 5. [requests連結ollama](#requests連結ollama)
+6. [requests連結ollama_generate_mode](#requests連結ollama_generate_mode)
+7. [requests連結chat_mode](#requests連結chat_mode)
 8. [連接gradio的介面呼叫ollama的api](#連接gradio的介面呼叫ollama的api)
 
 <a name="安裝Docker"></a>
@@ -165,7 +167,6 @@ docker run -d --network=host -v open-webui:/app/backend/data -e OLLAMA_BASE_URL=
 
 ---
 <a name=“requests連結ollama”></a>
-
 ### 5. requests連結ollama
 
 ```python
@@ -203,6 +204,134 @@ def chat_with_ollama(prompt: str):
 
 #範例輸入
 chat_with_ollama("請用簡單的方式解釋什麼是Python的函式？")
+```
+
+### 說明1:
+
+`options` 物件封裝了對於生成模型行為的三個關鍵調整參數：`temperature`、`top_p` 以及 `top_k`。透過這些設定，我們可以更精細地控制模型在產生文字時的隨機程度與多樣性，以達到更符合需求的輸出風格。
+
+`temperature`（溫度）參數設定為 0.7，表示在挑選下一個字元或詞彙時，會根據模型預測機率分佈做溫度縮放。溫度越接近 1，生成結果越隨機、多樣；當溫度降低時，生成更傾向於高機率選擇，輸出結果較為保守且重複性增加。設定為 0.7 能在隨機性與穩定性間取得平衡。
+
+`top_p`（又稱 nucleus sampling）設為 0.9，代表每次生成時僅考慮累積機率前 90% 的候選詞彙。換言之，模型先將所有候選依機率由高到低排序，然後從機率總和達到 0.9 的詞彙子集中進行隨機抽樣。這種方法可避免只關注最高機率而忽略其他合理選項，也能自動調整抽樣範圍以抑制極低機率的「噪音」輸出。
+
+`top_k` 參數設置為 50，表示在抽樣時僅從預測機率最高的前 50 個詞彙中選擇下一步結果。這是在限制搜索空間大小、提高運算效率與品質控制的常見做法。結合 `top_p` 與 `top_k` 使用，能進一步平衡多樣性與穩定性：`top_k` 確保候選集不超過一定規模，`top_p` 則依實際機率分佈動態修剪集內詞彙。
+
+綜合而言，這三項參數共同為生成模型提供了多層次的隨機與篩選機制。依據不同應用場景（如對話系統、文章撰寫或程式碼生成），可微調這些值以獲得更符合需求的結果。
+
+<a name=“requests連結ollama_generate_mode”></a>
+### 6. requests連結ollama_generate_mode
+
+```python
+import requests
+def chat_with_ollama(prompt: str):
+    url = "http://localhost:11434/api/generate"
+    payload = {
+        "model": "gemma3:1b",
+        "prompt": prompt,
+        "stream": False,
+        "options": { #參考說明1
+            "temperature": 0.7,
+            "top_p": 0.9,
+            "top_k": 50,
+        },
+        "max_tokens": 100,
+        "format": "json",
+    }
+
+    response = requests.post(url, json=payload)
+    result = response.json()
+    print("💬 AI 回應：")
+    # Print the whole result for debugging
+    #print(result)
+    # Try to print the 'response' key if it exists, otherwise print possible keys
+    if "response" in result:
+        print(result["response"])
+    elif "message" in result:
+        print(result["message"])
+    elif "content" in result:
+        print(result["content"])
+    else:
+        print("No expected key found in response. Available keys:", result.keys())
+
+    
+def chat_loop():
+    print("歡迎使用本地端 LLM 聊天機器人（輸入 q 離開）")
+    while True:
+        user_input = input("👤 你說：")
+        if user_input.lower() == 'q':
+            break
+        chat_with_ollama(user_input)
+
+chat_loop()
+```
+
+---
+
+<a name=“requests連結chat_mode”></a>
+
+### 7. requests連結chat_mode
+
+```python
+import requests
+import json
+
+def chat_with_ollama(prompt: str):
+    url = "http://localhost:11434/api/chat"
+    payload = {
+        "model": "gemma3:1b",
+        "messages": [
+            {
+                "role": "user",
+                "content": prompt
+            }
+        ],
+        "stream": True,
+        "options": {
+            "temperature": 0.7,
+            "top_p": 0.9,
+            "top_k": 50,
+        }
+    }
+
+    print("💬 AI 回應：", end="", flush=True)
+    
+    try:
+        response = requests.post(url, json=payload, stream=True)
+        response.raise_for_status()
+        
+        for line in response.iter_lines():
+            if line:
+                try:
+                    chunk = json.loads(line.decode('utf-8'))
+                    
+                    # 檢查是否有訊息內容
+                    if 'message' in chunk and 'content' in chunk['message']:
+                        content = chunk['message']['content']
+                        print(content, end="", flush=True)
+                    
+                    # 檢查是否完成
+                    if chunk.get('done', False):
+                        print()  # 換行
+                        break
+                        
+                except json.JSONDecodeError:
+                    continue
+                    
+    except requests.exceptions.RequestException as e:
+        print(f"\n❌ 請求錯誤: {e}")
+    except Exception as e:
+        print(f"\n❌ 處理錯誤: {e}")
+
+def chat_loop():
+    print("歡迎使用本地端 LLM 聊天機器人（輸入 q 離開）")
+    while True:
+        user_input = input("👤 你說：")
+        if user_input.lower() == 'q':
+            break
+        chat_with_ollama(user_input)
+        print()  # 空行分隔
+
+chat_loop()
 ```
 
 <a name="連接gradio的介面呼叫ollama的api"></a>
