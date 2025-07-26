@@ -166,7 +166,7 @@ docker run -d --network=host -v open-webui:/app/backend/data -e OLLAMA_BASE_URL=
 **使用瀏覽器啟動http://localhost:8080**
 
 ---
-<a name=“requests連結ollama”></a>
+<a name="requests連結ollama"></a>
 ### 5. requests連結ollama
 
 ```python
@@ -218,7 +218,7 @@ chat_with_ollama("請用簡單的方式解釋什麼是Python的函式？")
 
 綜合而言，這三項參數共同為生成模型提供了多層次的隨機與篩選機制。依據不同應用場景（如對話系統、文章撰寫或程式碼生成），可微調這些值以獲得更符合需求的結果。
 
-<a name=“requests連結ollama_generate_mode”></a>
+<a name="requests連結ollama_generate_mode"></a>
 ### 6. requests連結ollama_generate_mode
 
 ```python
@@ -267,8 +267,7 @@ chat_loop()
 
 ---
 
-<a name=“requests連結chat_mode”></a>
-
+<a name="requests連結chat_mode"></a>
 ### 7. requests連結chat_mode
 
 ```python
