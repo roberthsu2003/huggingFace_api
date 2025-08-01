@@ -45,19 +45,105 @@ docker run -d --network=host \
 - `--name open-webui`：為容器命名，方便後續管理
 - `ghcr.io/open-webui/open-webui:main`：指定 Docker 映像檔位置，`:main` 代表主分支最新版本
 
-#### 3.2 雲端安裝
+#### 3.2 樹莓派安裝
+**設定讓ollama允許外部存取**
 
-3.2.1 選擇雲端平台（如 GCP、AWS、Azure、Vultr 等）  
-3.2.2 建立一台 Linux VM（建議 Ubuntu 20.04 以上版本）  
-3.2.3 安裝 Docker：
+```bash
+sudo systemctl edit ollama.service
+```
+
+**修改必需放在這個文字下方**
+
+```
+### Anything between here and the comment below will become the new contents of the file
+
+[Service]
+Environment="OLLAMA_HOST=0.0.0.0"
+```
+
+**重新載入**
+
+```
+sudo systemctl daemon-reload
+```
+
+
+**重新啟動**
+
+```
+sudo systemctl restart ollama
+```
+
+
+
+**建立安裝目錄**
+
+```bash
+sudo mkdir -p /opt/stacks/openwebui
+```
+
+**進入目錄**
+
+```bash
+cd /opt/stacks/openwebui
+```
+
+**建立compose.yaml檔**
+
+```bash
+sudo nano compose.yaml
+```
+
+**編輯compose.yaml檔**
+
+```yaml
+services:
+  open-webui:
+    image: ghcr.io/open-webui/open-webui:main
+    container_name: open-webui
+    volumes:
+      - ./data:/app/backend/data
+    ports:
+      - 3000:8080
+    extra_hosts:
+      - host.docker.internal:host-gateway
+    restart: unless-stopped
+```
+
+
+**啟動compose**
+
+```bash
+docker compose up -d
+```
+
+**查詢ip address**
+
+```bash
+hostname -I
+```
+
+**連線**
+
+```bash
+http://<IPADDRESS>:3000
+```
+
+
+
+#### 3.3 雲端安裝
+
+3.3.1 選擇雲端平台（如 GCP、AWS、Azure、Vultr 等）  
+3.3.2 建立一台 Linux VM（建議 Ubuntu 20.04 以上版本）  
+3.3.3 安裝 Docker：
 
 ```bash
 sudo apt update
 sudo apt install docker.io
 ```
 
-3.2.4 執行 Docker 指令（同本地端）  
-3.2.5 設定防火牆或安全群組，開放 3000 埠對外連線
+3.3.4 執行 Docker 指令（同本地端）  
+3.3.5 設定防火牆或安全群組，開放 3000 埠對外連線
 
 ---
 
