@@ -4,10 +4,12 @@
 2. [本機安裝Ollama](#本機安裝Ollama)
 3. [docker安裝Ollama](#docker安裝Ollama)
 4. [docker安裝OpenWebUI](#docker安裝OpenWebUI)
+5. [requests連結olloam_初學者適用](./ollama.md)
 5. [requests連結ollama](#requests連結ollama)
 6. [requests連結ollama_generate_mode](#requests連結ollama_generate_mode)
 7. [requests連結chat_mode](#requests連結chat_mode)
 8. [連接gradio的介面呼叫ollama的api](#連接gradio的介面呼叫ollama的api)
+9. [requests連結ollama_generate_mode的更多範例](./python_ollama_applications.md)
 
 <a name="安裝Docker"></a>
 ### 1. 安裝Docker
