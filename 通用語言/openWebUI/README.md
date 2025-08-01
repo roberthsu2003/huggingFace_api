@@ -45,7 +45,7 @@ docker run -d --network=host \
 - `--name open-webui`：為容器命名，方便後續管理
 - `ghcr.io/open-webui/open-webui:main`：指定 Docker 映像檔位置，`:main` 代表主分支最新版本
 
-#### 3.2 樹莓派安裝
+#### 3.2 樹莓派安裝(沒有安裝成功)
 **設定讓ollama允許外部存取**
 
 ```bash
