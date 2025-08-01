@@ -341,7 +341,7 @@ chat_loop()
 - [ollama api官方說明書](https://github.com/ollama/ollama/blob/main/docs/api.md)
 
 > [!IMPORTANT]
-> 1. ollama的服數要開啟
+> 1. ollama的服務要開啟
 > 2. ollama run 模型名稱
 > 3. 本地端或docker api網址不一樣
 
